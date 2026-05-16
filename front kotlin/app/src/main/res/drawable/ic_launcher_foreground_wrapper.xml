@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 
+        Este wrapper centra el icono PNG dentro del layer de 108dp 
+        de los iconos adaptativos, evitando que se estire si no es 1:1.
+    -->
+    <item
+        android:drawable="@drawable/icon"
+        android:gravity="center"
+        android:width="72dp"
+        android:height="72dp" />
+</layer-list>
+
