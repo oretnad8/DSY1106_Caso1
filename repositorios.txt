@@ -1,0 +1,25 @@
+
+DSY1106 - DESARROLLO FULLSTACK III
+ENLACES DE REPOSITORIOS - EVALUACIÓN PARCIAL N°2
+
+
+REPOSITORIO PRINCIPAL DE LA SOLUCIÓN:
+-> https://github.com/oretnad8/DSY1106_Caso1.git
+
+ESTRUCTURA DE COMPONENTES INTERNOS:
+
+1. COMPONENTES BACKEND (MICROSERVICIOS MAVEN)
+   - Directorio interno: /backend
+   - Contenido: Módulos basados en arquetipos Maven Spring Boot (authservice, usuariosservice, productosservice, ubicacionesservice, pedidosservice, aprobacionesservice).
+
+2. COMPONENTE BACKEND FOR FRONTEND (BFF)
+   - Directorio interno: /front web/backend
+   - Contenido: Servidor middleware de agregación desarrollado en Node.js Express.
+
+3. COMPONENTE FRONTEND WEB ( dashboard )
+   - Directorio interno: /front web/frontend
+   - Contenido: Aplicación SPA administrativa basada en React, TypeScript y NPM.
+
+4. COMPONENTE FRONTEND MÓVIL
+   - Directorio interno: /front kotlin
+   - Contenido: Aplicación Android nativa desarrollada en Kotlin utilizando Jetpack Compose y arquitectura MVVM.
