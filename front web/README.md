@@ -1,0 +1,1 @@
+# SmartLogix - Gestión Logística SaaS
