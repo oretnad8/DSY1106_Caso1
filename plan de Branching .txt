@@ -1,0 +1,23 @@
+1. ESTRATEGIA: FEATURE BRANCHING (GITFLOW ADAPTADO)
+Para optimizar el desarrollo simultáneo y el trabajo en equipo, se adoptó una estrategia estructurada que aísla de manera estricta el código en producción de las fases de integración y desarrollo.
+
+2. ESTRUCTURA DE RAMAS
+- main: Contiene el código completamente estable, testeado y desplegado en producción. No se permiten commits directos. Cada entrega a esta rama representa una release oficial.
+- develop: Rama base de integración. Aquí confluyen todas las características nuevas desarrolladas por el equipo. Es el entorno inmediato de pruebas pre-producción.
+- feature/: Ramas temporales creadas para el desarrollo de funcionalidades específicas. Nacen a partir de 'develop' y se reincorporan a ella tras aprobar un proceso de revisión y pruebas locales.
+  Ejemplos utilizados:
+  * feature/backend-microservices
+  * feature/frontend-web-bff
+  * feature/frontend-kotlin
+
+3. FLUJO DE TRABAJO E INTEGRACIÓN
+1. Creación: El desarrollador se posiciona en 'develop' y extrae una rama: `git checkout -b feature/funcionalidad`.
+2. Desarrollo: Se realizan commits estructurados con prefijos claros (feat, fix, refactor, docs).
+3. Sincronización previa: Antes del merge, el desarrollador trae los últimos cambios de 'develop' a su rama local para detectar colisiones: `git merge develop`.
+4. Integración: Se realiza un merge hacia 'develop' utilizando la bandera `--no-ff` (no-fast-forward) para conservar explícitamente el registro visual del ciclo de vida de la rama.
+
+4. POLÍTICA DE GESTIÓN Y RESOLUCIÓN DE CONFLICTOS
+Cuando dos o más desarrolladores modifican líneas concurrentes en un mismo archivo (por ejemplo, configuraciones compartidas de dependencias en un pom.xml o rutas), se aplica el siguiente protocolo de mitigación:
+1. Identificación Local: Git detiene el proceso de merge y marca los bloques en conflicto con indicadores lógicos (<<<<<<< HEAD, =======, >>>>>>>).
+2. Resolución Manual: El equipo analiza las líneas en conflicto, determina qué lógica de negocio prevalece (o unifica ambas), limpia el archivo eliminando los marcadores de Git y guarda los cambios.
+3. Consolidación: Se marcan los archivos resueltos con `git add` y se finaliza el merge mediante un commit explícito descriptivo (`git commit -m "merge: resolucion de conflictos..."`).
